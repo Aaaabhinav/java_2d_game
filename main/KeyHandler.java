@@ -55,7 +55,7 @@ public class KeyHandler implements KeyListener{
 
         if(gp.gameState==2){
             
-            /*if(code==KeyEvent.VK_A){
+            if(code==KeyEvent.VK_A){
                 if(gp.ui.quitState>0){
                     gp.ui.quitState--;
                 }
@@ -68,24 +68,32 @@ public class KeyHandler implements KeyListener{
 
                 }
               
-            }/* 
+            }
 
             //code inorder to replay the game 
 
-          /*  if(code==KeyEvent.VK_ENTER){
+            if(code==KeyEvent.VK_ENTER){
                 if(gp.ui.quitState==0){
-                    gp.gameState=0;
+                    gp.gameState=1;
+                    gp.ui.gameFinished=false;
+                    gp.ui.playtime=0;
+                    gp.player.worldX = gp.tileSize * 23;
+                     gp.player.worldY = gp.tileSize * 21;
+                     gp.player.speed = 4;
+                     gp.player.direction = "down";
+                    gp.setupGame();
+                   
               
                 }
-            }*/
+            }
 
             if(code==KeyEvent.VK_ENTER){
                 if(gp.ui.quitState==1){
                
                     
-                  
+                    System.exit(0);
                 }
-                System.exit(0);
+                
             }
 
 
