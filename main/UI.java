@@ -19,6 +19,8 @@ public class UI {
     double playtime; 
     public int commandNum=0;
 
+    public int quitState=1;
+
 
 
 
@@ -127,6 +129,21 @@ public class UI {
             g2.setFont(arial_40);
             g2.setColor(Color.white);
             g2.drawString("Your time was : "+roundToTwoDecimalPlaces(playtime), 4*gp.tileSize+gp.tileSize/2, 2*gp.tileSize);
+
+
+            /*if(quitState==0){
+                g2.drawString(">", 50, 500);
+            }
+            String text ="Play Again";
+            g2.drawString(text,100,500);
+*/
+            if(quitState==1){
+                g2.drawString(">", 300, 500);
+            }
+
+           String text ="Quit";
+            g2.drawString(text,350,500);
+
 
         }else{
             playtime+=(double)1/60;

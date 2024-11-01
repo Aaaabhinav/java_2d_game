@@ -142,6 +142,8 @@ public class GamePanel extends JPanel implements Runnable{
 
           ui.draw(g2);
 
+        
+
         }else{
             tileM.draw(g2);
 

@@ -53,20 +53,62 @@ public class KeyHandler implements KeyListener{
 
         }
 
+        if(gp.gameState==2){
+            
+            /*if(code==KeyEvent.VK_A){
+                if(gp.ui.quitState>0){
+                    gp.ui.quitState--;
+                }
+                
+            }
+
+            if(code==KeyEvent.VK_D){
+                if(gp.ui.quitState<1){
+                    gp.ui.quitState++;
+
+                }
+              
+            }/* 
+
+            //code inorder to replay the game 
+
+          /*  if(code==KeyEvent.VK_ENTER){
+                if(gp.ui.quitState==0){
+                    gp.gameState=0;
+              
+                }
+            }*/
+
+            if(code==KeyEvent.VK_ENTER){
+                if(gp.ui.quitState==1){
+               
+                    
+                  
+                }
+                System.exit(0);
+            }
 
 
-        if (code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
-            upPressed = true;
+
         }
-        if (code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
-            downPressed = true;
+
+
+        if(gp.gameState==1){
+            if (code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
+                upPressed = true;
+            }
+            if (code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
+                downPressed = true;
+            }
+            if (code == KeyEvent.VK_A || code == KeyEvent.VK_LEFT) {
+                leftPressed = true;
+            }
+            if (code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {
+                rightPressed = true;
+            }
+
         }
-        if (code == KeyEvent.VK_A || code == KeyEvent.VK_LEFT) {
-            leftPressed = true;
-        }
-        if (code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {
-            rightPressed = true;
-        }
+        
 
     }
 
@@ -74,6 +116,8 @@ public class KeyHandler implements KeyListener{
     public void keyReleased(KeyEvent e) {
         
         int code = e.getKeyCode();
+
+
 
         if (code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
             upPressed = false;

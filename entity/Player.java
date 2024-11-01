@@ -150,6 +150,7 @@ public class Player extends Entity{
 
                  case "chest":
                  gp.ui.gameFinished=true;
+                 gp.gameState=2;
                  
                   
                  break;
