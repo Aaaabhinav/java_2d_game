@@ -1,9 +1,11 @@
 package main;
 
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;;
 
 public class KeyHandler implements KeyListener{
+    GamePanel gp;
 
     public boolean upPressed, downPressed, leftPressed, rightPressed;
 
@@ -11,10 +13,47 @@ public class KeyHandler implements KeyListener{
     public void keyTyped(KeyEvent e) {
     }
 
+    public KeyHandler(GamePanel gp){
+        this.gp=gp;
+    }
+
     @Override
     public void keyPressed(KeyEvent e) {
         
         int code = e.getKeyCode();
+
+        //Title State{}
+        if(gp.gameState==0){
+            if (code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
+                if(gp.ui.commandNum>0){
+                    
+                gp.ui.commandNum--;
+
+                }
+            }
+            if (code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
+                if(gp.ui.commandNum<1){
+                    gp.ui.commandNum++;
+
+                }
+                
+            }
+
+            if(code==KeyEvent.VK_ENTER){
+                if(gp.ui.commandNum==0){
+                    gp.gameState=1;
+                }
+            }
+
+            if(code==KeyEvent.VK_ENTER){
+                if(gp.ui.commandNum==1){
+                  System.exit(0);
+                }
+            }
+
+        }
+
+
 
         if (code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
             upPressed = true;
