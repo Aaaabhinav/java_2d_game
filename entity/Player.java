@@ -154,6 +154,13 @@ public class Player extends Entity{
                  
                   
                  break;
+
+                 case "boots":
+                
+                    gp.obj[i]=null;    
+                    gp.ui.showMessage("Speed up!"); 
+                    speed++;               
+                    break;
                 default:
                     break;
             }
